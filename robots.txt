@@ -1,0 +1,7 @@
+#Baiduspider
+User-agent: Baiduspider
+Disallow: /
+
+# protect keybase.txt
+User-agent: *
+Disallow: keybase.txt
