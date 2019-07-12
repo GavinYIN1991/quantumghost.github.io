@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>GPG 密钥签名策略</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://blog.quantumghost.me/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://blog.quantumghost.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="QuantumGhost's Vault Full Atom Feed" />
+
+  <link href="https://blog.quantumghost.me/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://blog.quantumghost.me/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="QuantumGhost's Vault"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="QuantumGhost's Vault"/>
+<meta property="og:description" content="View the blog."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://blog.quantumghost.me/"/>
+<meta property="og:image" content="https://blog.quantumghost.me/theme/images/home-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Website",
+  "name": " QuantumGhost's Vault ",
+  "url" : "https://blog.quantumghost.me/",
+  "image": "https://blog.quantumghost.me/theme/images/home-bg.jpg",
+  "description": "View the blog."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+          <li><a href="/archives" role="presentation">博客</a></li>
+          <li><a href="/categories" role="presentation">分类</a></li>
+          <li><a href="/tags" role="presentation">标签</a></li>
+          <li><a href="/pages/gpg-policy" role="presentation">GPG 签名策略</a></li>
+          <li><a href="/pages/about" role="presentation">关于</a></li>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://blog.quantumghost.me/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">GPG 密钥签名策略</h1>
+            <div class="post-cover cover" style="background-image: url('https://blog.quantumghost.me/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+  <!-- Post content -->
+  <main class="content" role="main">
+      <article class="post">
+      <div class="inner">
+          <section class="post-content">
+              <div class="section" id="id1">
+<h2>概要</h2>
+<p>本文适用于以下密钥所做出的签名：</p>
+<pre class="code literal-block">
+sec&gt;  rsa4096/0xB29A14086516184D 2018-09-15 [SC]
+      C68598CDAF8511D16CB90610B29A14086516184D
+uid                   [ultimate] Luke Lin &lt;lqd1991&#64;gmail.com&gt;
+ssb&gt;  rsa4096/0x9F2E8786D1B7EC74 2018-09-15 [E]
+</pre>
+<p>你可以使用以下方式获取我的 GPG 公钥：</p>
+<ul class="simple">
+<li><tt class="docutils literal">gpg <span class="pre">--fetch-keys</span> <span class="pre">https://keybase.io/quantumghost/key.asc</span></tt></li>
+<li><tt class="docutils literal">gpg <span class="pre">--recv-keys</span> <span class="pre">--keyserver</span> <span class="pre">hkps://keys.openpgp.org</span> C68598CDAF8511D16CB90610B29A14086516184D</tt></li>
+<li><tt class="docutils literal">gpg <span class="pre">--fetch-keys</span> <span class="pre">https://blog.quantumghost.me/key.asc</span></tt></li>
+</ul>
+<p>你也可以在 <a class="reference external" href="https://keybase.io/">Keybase</a> 上关注 <a class="reference external" href="https://keybase.io/quantumghost">我</a>。</p>
+<p><strong>注意</strong></p>
+<ul class="simple">
+<li>使用 <tt class="docutils literal"><span class="pre">--recv-keys</span></tt> <strong>导入密钥时务必使用完整的密钥 ID</strong> ，<a class="reference external" href="https://evil32.com/">有资料显示</a>，
+<a class="reference external" href="https://lwn.net/Articles/689792/">密钥碰撞</a> 是可行的。</li>
+<li>使用 <tt class="docutils literal"><span class="pre">--recv-keys</span></tt> 导入密钥时请使用 <tt class="docutils literal"><span class="pre">hkps://keys.openpgp.org</span></tt> 作为 keyserver，使用
+其他 keyserver 可能让你受到 <a class="reference external" href="http://bit.ly/30if6V3">Certificate Flooding Attach</a> 。</li>
+</ul>
+<p>本策略最初撰写于 2019-07-04 且从此日期开始执行，不过也随时可能被更新版本替代。
+本文档的结构和内容系受到 Allen Zhong 的 <a class="reference external" href="https://atr.me/~pgp/policy-cn.html">PGP 密钥签名策略</a> 启发。</p>
+</div>
+<div class="section" id="id5">
+<h2>签名策略</h2>
+<div class="section" id="id6">
+<h3>签名级别</h3>
+<p>依据 <a class="reference external" href="https://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration-Options.html">GPG 手册</a>
+和 <a class="reference external" href="https://tools.ietf.org/html/rfc4880#section-5.2.1">OpenPGP Message Format</a>，证书分为 <tt class="docutils literal">Generic (0)</tt>,
+<tt class="docutils literal">Persona (1)</tt>, <tt class="docutils literal">Casual (2)</tt>, <tt class="docutils literal">Positive (3)</tt> 四个级别。为了明确含义，现在定义各级别意义如下
+（注意这些级别与 GPG 手册和规范的规定不完全一致）：</p>
+<ul>
+<li><p class="first">Level 0（一般认证）</p>
+<p>同 GPG 手册中的定义，我不对密钥的验证流程做出保证。</p>
+</li>
+<li><p class="first">Level 1（个人认证）</p>
+<p>我会为通过仅通过电子邮件验证的密钥进行这一级别签名，此级别签名仅保证密钥持有者控制被签名 uid
+所对应的电子邮件。</p>
+</li>
+<li><p class="first">Level 2（谨慎认证）</p>
+<p>我只会在线下为他人实行此等级签名，此等签名需要验证政府签发的身份证件（身份证，户口本或护照）。
+此级别基本保证被签名 uid 和邮箱由现实中的对应实体控制。</p>
+</li>
+<li><p class="first">Level 3（积极认证）</p>
+<p>同二，且被签名者需要是我线下认识并且认为可以足够信任的人，被签名者需要使用硬件 Token（如
+<a class="reference external" href="https://www.yubico.com/">Yubikey</a>，GPG SmartCard）或密钥不可导的软件 Token
+（如 <a class="reference external" href="https://krypt.co/">Krypton</a>）保存密钥。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>签名流程</h2>
+<ul>
+<li><p class="first">Level 1</p>
+<p>被签名人需要使用邮箱向我发送一封邮件，该邮箱应属于待签名密钥 uid 所对应邮箱之一，该邮件应使用待签名密钥签名
+并使用我的密钥加密，并需包含如下内容：</p>
+<ul class="simple">
+<li>密钥指纹</li>
+<li>密钥被上传至哪一个密钥服务器（或其他获取密钥的方式）</li>
+<li>希望我签名的 UID, 若希望我签名所有 UID 则此项可留空</li>
+<li>关于希望获得 Level 0 签名的一些说明</li>
+</ul>
+</li>
+<li><p class="first">Level 2</p>
+<p>被签名人需要带上身份证件并与我进行一次线下会面。</p>
+<p>被签名人需要手写或打印需要被签名的密钥指纹到一张纸条上，并在会面时出示给我看。</p>
+<p>签名流程大体同 Level 1，除此之外，我将当面核验被签名人的身份证件和被签名人的邮箱收到了我发出的验证邮件，并同时
+检查被签名人的有效身份证件。</p>
+</li>
+</ul>
+<p>一般步骤：</p>
+<ul class="simple">
+<li>我会向待签名密钥中的每个 uid 对应的电子邮件地址发送一封验证邮件，验证邮件包含随机字符串并使用待签名密钥加密</li>
+<li>待签名者需要使用对应的邮箱将待签名字符串回复原样给我，在收到邮件后我将确认我收到的随机字符串是否与发出的相同</li>
+<li>如果待签名者的所有邮箱都进行了回复并通过了验证，我将进行签名并将签名上传至 pool.sks-keyservers.net</li>
+<li>如果部分 uid 未通过验证，我将挂起签名流程，直到所有 uid 都已通过验证或待签名人放弃签名</li>
+<li>待签名人需要在 24 小时内完成上述流程，否则视作放弃签名</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>公平性原则</h2>
+<p>对于我请求他人做出的签名，我会（按照对方的签名策略）以相同级别签署对方的密钥。同时，我也希望从我所签署的密钥的持有者处获得与我所作出的相同级别的签名。</p>
+<p>我希望对密钥进行交叉签名，所以若被签署人并不愿意签署我的密钥，则向我提出签名请求不具有任何意义。</p>
+</div>
+<div class="section" id="changelog">
+<h2>Changelog</h2>
+<ul class="simple">
+<li>2019.07.04 初版发布</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>参考资料</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://atr.me/~pgp/policy-cn.html">Allen Zhong 的 GPG 签名策略</a></li>
+<li><a class="reference external" href="https://www.gnupg.org/gph/en/manual/c235.html">GPG 手册对于密钥管理的介绍</a></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>授权协议</h2>
+<p>Copyright (C) 2019-2019 QuantumGhost.</p>
+<p>Permission is granted to copy, distribute and/or modify this document under the terms of the <a class="reference external" href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation License</a>, Version 1.2 or any later version published by the Free Software Foundation.</p>
+</div>
+
+          </section>
+      </div>
+      </article>
+  </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="https://blog.quantumghost.me/theme/js/script.js"></script>
+
+</body>
+</html>
